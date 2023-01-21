@@ -1,4 +1,6 @@
-# Usage
+# mosquitto-mqtt-K8s
+
+Mosquitto MQTT deployment manifests for Kubernetes.
 
 You can either use the plain YML files, or use [Kustomize](https://kustomize.io/).
 
