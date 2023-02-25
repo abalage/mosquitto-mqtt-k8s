@@ -20,3 +20,9 @@ patchesJson6902:
     - op: add
       path: /spec/storageClassName
       value: nfs-client
+
+configMapGenerator:
+- name: mosquitto-base-config
+  behavior: replace
+  files:
+  - password_file

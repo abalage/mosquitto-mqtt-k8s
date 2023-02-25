@@ -21,7 +21,7 @@ spec:
       initContainers:
         - name: create-config
           image: "eclipse-mosquitto:2.0.15"
-          command: ['sh', '-c', "cd /mosquitto/config/ && if [ ! -f mosquitto.conf ]; then cp -v /tmp/mosquitto.conf mosquitto.conf; else echo 'Config file already exist'; fi && if [ ! -f password_file ]; then cp -v /tmp/password_file password_file; else echo 'Password file already exist'; fi "]
+          command: ['sh', '-c', "cd /mosquitto/config/ && cp -v /tmp/mosquitto.conf mosquitto.conf && cp -v /tmp/password_file password_file"]
           volumeMounts:
             - name: mosquitto-conf
               mountPath: /mosquitto/config
