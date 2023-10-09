@@ -3,24 +3,6 @@ kind: Kustomization
 resources:
 - ../base
 
-patchesJson6902:
-- target:
-    version: v1
-    kind: PersistentVolumeClaim
-    name: mosquitto-data
-  patch: |-
-    - op: add
-      path: /spec/storageClassName
-      value: nfs-client
-- target:
-    version: v1
-    kind: PersistentVolumeClaim
-    name: mosquitto-conf
-  patch: |-
-    - op: add
-      path: /spec/storageClassName
-      value: nfs-client
-
 configMapGenerator:
 - name: mosquitto-base-config
   behavior: replace
