@@ -20,7 +20,7 @@ spec:
     spec:
       initContainers:
         - name: create-config
-          image: "eclipse-mosquitto:2.0.18"
+          image: "eclipse-mosquitto:2.0.21"
           command: ['sh', '-c', "cd /mosquitto/config/ && cp -v /tmp/mosquitto.conf mosquitto.conf && cp -v /tmp/password_file password_file"]
           volumeMounts:
             - name: mosquitto-conf
@@ -33,7 +33,7 @@ spec:
               subPath: password_file
       containers:
         - name: mosquitto
-          image: "eclipse-mosquitto:2.0.18"
+          image: "eclipse-mosquitto:2.0.21"
           imagePullPolicy: IfNotPresent
           ports:
             - name: mqtt
